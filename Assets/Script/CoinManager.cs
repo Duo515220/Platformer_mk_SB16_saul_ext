@@ -5,22 +5,13 @@ using UnityEngine.UI;
 
 public class CoinManager : MonoBehaviour
 {
-    public static CoinManager instance;
 
     public int coinCount = 0;          // Количество монет
-    private Text coinText;               
+    public Text coinText;               
 
     private void Awake()
     {
-        // Реализация паттерна Singleton, чтобы можно было обращаться к CoinManager из других скриптов
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        UpdateCoinText();   
     }
 
     // Метод увеличения монет и обновления текста
@@ -32,6 +23,6 @@ public class CoinManager : MonoBehaviour
 
     void UpdateCoinText()
     {
-        coinText.text = "Монеты: " + coinCount.ToString();
+        coinText.text = "" + coinCount.ToString();
     }
 }
