@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Сохраняем этот размер как оригинальный
         originalScale = transform.localScale;
+        Time.timeScale = 1;
     }
 
     void Update()

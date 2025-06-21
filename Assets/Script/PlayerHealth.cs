@@ -17,6 +17,12 @@ public class PlayerHealth : MonoBehaviour
         deathPanel.SetActive(false); // Скрываем панель в начале
     }
 
+    public void AddHp()
+    {
+        currentHealth += 1;
+          livesText.text = currentHealth.ToString();
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
